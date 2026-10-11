@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple demo online food ordering system.">
+  <title>QuickBite | Online Food Ordering</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="QuickBite home"><span class="brand-icon">🍴</span> QuickBite</a>
+    <span class="header-note">Fresh picks. Easy ordering.</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR FAVOURITES, ONE CLICK AWAY</p>
+      <h1>Good food, <span>good mood.</span></h1>
+      <p class="hero-copy">Choose your favourites, review your total, and place a demo order.</p>
+    </section>
+
+    <section class="panel menu-panel" aria-labelledby="menu-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE MENU</p><h2 id="menu-heading">Pick your food</h2></div>
+        <span class="menu-count">4 items</span>
+      </div>
+      <div class="food-list">
+        <label class="food-card">
+          <span class="food-emoji" aria-hidden="true">🍕</span>
+          <span class="food-info"><strong>Pizza</strong><small>Cheesy classic</small></span>
+          <span class="food-price">₹120</span>
+          <input type="checkbox" name="food" value="120" data-name="Pizza" aria-label="Add Pizza for 120 rupees" onchange="calculateTotal()">
+        </label>
+        <label class="food-card">
+          <span class="food-emoji" aria-hidden="true">🍔</span>
+          <span class="food-info"><strong>Burger</strong><small>Juicy and satisfying</small></span>
+          <span class="food-price">₹80</span>
+          <input type="checkbox" name="food" value="80" data-name="Burger" aria-label="Add Burger for 80 rupees" onchange="calculateTotal()">
+        </label>
+        <label class="food-card">
+          <span class="food-emoji" aria-hidden="true">🍟</span>
+          <span class="food-info"><strong>French Fries</strong><small>Golden and crispy</small></span>
+          <span class="food-price">₹60</span>
+          <input type="checkbox" name="food" value="60" data-name="French Fries" aria-label="Add French Fries for 60 rupees" onchange="calculateTotal()">
+        </label>
+        <label class="food-card">
+          <span class="food-emoji" aria-hidden="true">🥤</span>
+          <span class="food-info"><strong>Soft Drink</strong><small>Chilled refreshment</small></span>
+          <span class="food-price">₹50</span>
+          <input type="checkbox" name="food" value="50" data-name="Soft Drink" aria-label="Add Soft Drink for 50 rupees" onchange="calculateTotal()">
+        </label>
+      </div>
+    </section>
+
+    <section class="panel order-panel" aria-labelledby="order-heading">
+      <div class="section-heading">
+        <div><p class="eyebrow">CHECKOUT</p><h2 id="order-heading">Your order</h2></div>
+        <span class="secure-note">Demo checkout</span>
+      </div>
+      <div id="selected-items" class="selected-items">No items selected yet.</div>
+      <div class="total-row"><span>Total amount</span><strong id="total" aria-live="polite">₹0</strong></div>
+
+      <form id="order-form" novalidate>
+        <label for="name">Customer name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your full name" autocomplete="name" required maxlength="80">
+        <label for="phone">Phone number</label>
+        <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" autocomplete="tel" inputmode="tel" required maxlength="20">
+        <button type="submit" class="order-button">Place order <span aria-hidden="true">→</span></button>
+      </form>
+      <p id="message" class="message" role="status" aria-live="polite"></p>
+      <p class="demo-note">Student project demo — orders are not sent to a restaurant or stored online.</p>
+    </section>
+
+    <section class="project-note">
+      <span aria-hidden="true">💡</span>
+      <p><strong>How it works</strong><br>HTML builds the page, CSS styles the interface, and JavaScript updates the cart total and validates the order form.</p>
+    </section>
+  </main>
+
+  <footer>Made for a Web Technology open project · Academic Year 2025–2028</footer>
+</body>
+</html>
